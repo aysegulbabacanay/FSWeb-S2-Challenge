@@ -75,20 +75,19 @@ function cumleKur(birinci, ikinci="", ucuncu="", dorduncu="", besinci=""){
 
 /* (Oto test yok) cumleKur fonksiyonuna yalnızca 1 parametre göndererek "Hello World!" stringini elde edin, sonucu konsolde gözlemleyin */
 
-
-
+console.log(cumleKur("Hello World!"))
 
 /* (Oto test yok) cumleKur fonksiyonuna yalnızca 2 parametre göndererek "Hello World!" stringini elde edin, sonucu konsolde gözlemleyin */
 
+console.log(cumleKur("Hello"," World!"))
 
 
 
 /* (Oto test var) cumleKur fonksiyonuna 5 parametre göndererek "Ben iyi bir yazılımcı olacağım!" stringini elde edin, sonucu `bircumle` değişkenine atayın ve konsolde gözlemleyin */
 var bircumle;
 
-/* kodlar buraya */
-
-
+var bircumle =cumleKur("Ben", " iyi", " bir", " yazılımcı", " olacağım!")
+console.log (bircumle)
 
 //		Sayfanın en üstünde global olarak tanımlanmış `cumleler` adında bir dizi bulunmaktadır. Bu dizinin içinde en çok 5 en az 1 adet string bulunan diziler bulunmaktadır. Aşağıdaki görevlerde aksi belirtilmedikçe bu dizi kullanılacaktır.
 
@@ -104,10 +103,17 @@ var bircumle;
 	*/
 	
 
-function cumlelereDonustur(/* kodlar buraya */ ){
-	/* kodlar buraya */
+function cumlelereDonustur(x, ayrac= ",")
+{
+let a =[]
+	for (let i =0 ; i<x.length; i++)
+{
+	a.push(x[i].join(ayrac))
+}
+return a
 }
 
+console.log(cumlelereDonustur(cumleler, " "))
 
 
 /* GÖREV 2:
@@ -120,18 +126,24 @@ function cumlelereDonustur(/* kodlar buraya */ ){
 			6. Oluşturulan paragraf döndürülecek
 	*/
 	
-function paragrafOlustur(/* kodlar buraya */ ){
-	/* kodlar buraya */ 
-}
+function paragrafOlustur(x,callbackCumleKur,callbackcumlelereDonustur )
+{
 
+	let newDizi = callbackcumlelereDonustur(x, " ");
+	return callbackCumleKur(newDizi[1],newDizi[3],newDizi[5],newDizi[7],newDizi[9]);
+
+}
+console.log(paragrafOlustur(cumleler,cumleKur,cumlelereDonustur))
 
 /* 	GÖREV 3:
 		Yukarıda isimleri sebzeler ve meyveler olan 2 dizi bulunmaktadır. Bu dizileri kullanarak aşağıdaki görevleri tamamlayın.
 			3a. meyveler dizisinin ilk ve son elemanlarını diziden çıkartın. (.pop ve .shift metodlarını kullanın)
  */
 //3a çözümü
-/* kodlar buraya */
+meyveler.shift()
+meyveler.pop()
 
+console.log(meyveler)
 
 
 
@@ -140,7 +152,9 @@ function paragrafOlustur(/* kodlar buraya */ ){
 /* 			3b.  Bir tavşan ve bir kirpi arkadaşlar sebzeler dizimizin peşine düştü. Tavşan => 🐇 , Kirpi=> 🦔 , Tavşanla kirpi sebzeleri ele geçirmek için bir plan kurdular. Tavşan diziye önden saldıracak, kirpi ise arkalarından dolaşacak. Varsayalım ki arkadaşların planları başarılı oldu. Tavşanı dizinin ilk elemanına 🐇, Kirpiyi dizinin son elemanına ekleyin 🦔 
 */
 //3b çözümü
-/* kodlar buraya */
+sebzeler.unshift("🐇")
+sebzeler.push("🦔")
+console.log(sebzeler)
 
 
 
@@ -154,7 +168,9 @@ function paragrafOlustur(/* kodlar buraya */ ){
 	//3c çözümü
 /* kodlar buraya */
 
-var manav;
+
+let manav=meyveler.concat(sebzeler);
+console.log(manav)
 
 
 
