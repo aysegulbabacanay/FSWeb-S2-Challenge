@@ -186,10 +186,17 @@ console.log(manav)
 			4. elde edilen string döndürülecek
  */
 
-function emojileriDonustur(/* kodlar buraya */){
-/* kodlar buraya */
+			function emojileriDonustur(str, emoji){
+				for(let x in emoji){ // Yeni Yöntem.
+					str = str.replace(x.toLowerCase() , emoji[x]);
+					str = str.replace(x.toUpperCase() , emoji[x]);
+				}
+						return str;
+			}
+			console.log(emojileriDonustur("Merhaba :) :) :( :d :D :o :p <3", emojiler));
 
-}
+
+
 
 
 
